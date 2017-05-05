@@ -1,0 +1,38 @@
+{
+  "name": "redux-ga-screen-tracker",
+  "version": "1.0.0",
+  "description": "Redux middleware for screen tracking in google analytics",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest ./tests/**.spec.js",
+    "test:watch": "jest --verbose --watch",
+    "coverage": "jest --verbose --coverage && open ./coverage/lcov-report/index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ayushinigam/redux-ga-screen-tracker.git"
+  },
+  "keywords": [
+    "redux",
+    "middleware",
+    "google",
+    "analytics",
+    "screen",
+    "view",
+    "tracking",
+    "scene",
+    "react-native",
+    "react",
+    "ga"
+  ],
+  "author": "Ayushi Nigam",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ayushinigam/redux-ga-screen-tracker/issues"
+  },
+  "homepage": "https://github.com/ayushinigam/redux-ga-screen-tracker#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "jest": "^19.0.2"
+  }
+}
