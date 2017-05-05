@@ -3,25 +3,25 @@
   "routes":[
     {
       "index":1,
-      "routeName":"OnBoarding",
+      "routeName":"ParentScreen",
       "routes":[
-        {"routeName":"Landing"},
-        {"routeName":"LoginWithEasyPin"}
+        {"routeName":"ChildScreen1"},
+        {"routeName":"ChildScreen1"}
       ]
     },
     {
       "index":1,
-      "routeName":"Main",
+      "routeName":"NextParentScreen",
       "routes":[
         {
           "index":0,
-          "routeName":"home",
-          "routes":[{"routeName":"Homescreen"}]
+          "routeName":"NextChildScreen1",
+          "routes":[{"routeName":"NextGrandChildScreen1"}]
         },
         {
           "index":0,
-          "routeName":"invest",
-          "routes":[{"routeName":"InvestScreen"}]
+          "routeName":"NextChildScreen2",
+          "routes":[{"routeName":"NextGrandChildScreen2"}]
           }
         ]
       }

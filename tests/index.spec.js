@@ -17,7 +17,8 @@ const dispatchWithStoreOf = (storeData, action) => {
   return dispatched;
 };
 
-describe('middlewares', () => {
+describe('screenTracking middleware', () => {
+
   it('should not call google analytics tracker', () => {
     const action = {
       type: 'TEST_ACTION'
@@ -25,14 +26,14 @@ describe('middlewares', () => {
     dispatchWithStoreOf({}, action);
     expect(tracker.trackScreenView).not.toBeCalled();
   });
+
   it('should dispatch an action', () => {
     const action = {
       type: 'Navigation/BACK'
     };
-    expect(
-      dispatchWithStoreOf({}, action)
-    ).toEqual(action);
+    expect(dispatchWithStoreOf({}, action)).toEqual(action);
   });
+
   it('should call google analytics tracker', () => {
     expect(tracker.trackScreenView).toBeCalledWith('B');
   });
