@@ -17,6 +17,7 @@ npm install redux-ga-screen-tracker --save
 <br>
 
 ```javascript
+//store.js
 import screenTracking from 'redux-ga-screen-tracker';
 import tracker from '../googleAnalytics.util'; //tracker from react-native-google-analytics-bridge
 
@@ -44,6 +45,7 @@ export default tracker;
 2. Navigation state in store
 
 ```javascript
+//reducers: index.js
 import Navigator from '../routes/index.routes'; //react-navigation
 
 const nav = (state, action) => (
