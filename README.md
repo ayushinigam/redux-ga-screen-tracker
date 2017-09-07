@@ -14,7 +14,7 @@ npm install redux-ga-screen-tracker --save
  * tracker: An instance of ```react-native-google-analytics-bridge```
  * nav: Key for store object with navigation stack
  * navActionsToTrack: Array of actions for screen tracking
- * gaRouteMap: config map of screen name to business name to be used in google analytics tracker
+ * gaRouteMap (optional) : config map of screen name to business name to be used in google analytics tracker
 <br>
 
 ```javascript
