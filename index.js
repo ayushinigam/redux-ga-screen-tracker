@@ -1,14 +1,16 @@
 "use strict";
+const isEmpty = require('./utils/isEmpty.utils');
 const getCurrentRouteName = require('./utils/transformer.utils');
 
-module.exports = (tracker, navStoreKey, navActions) => {
+module.exports = (tracker, navStoreKey, navActions, gaRouteMap = {}) => {
   return ({getState}) => (next) => (action) => {
     if(navActions.includes(action.type)) {
       const currentScreen = getCurrentRouteName(getState()[navStoreKey]);
       const result = next(action);
       const nextScreen = getCurrentRouteName(getState()[navStoreKey]);
       if (nextScreen !== currentScreen) {
-        tracker.trackScreenView(nextScreen);
+        const screenName = isEmpty(gaRouteMap) ? nextScreen : gaRouteMap[nextScreen];
+        tracker.trackScreenView(screenName);
       }
       return result;
     } else {
