@@ -4,7 +4,7 @@
   "description": "Redux middleware for screen tracking in google analytics",
   "main": "index.js",
   "scripts": {
-    "test": "jest ./tests/**.spec.js",
+    "test": "jest",
     "test:watch": "jest --verbose --watch",
     "coverage": "jest --verbose --coverage && open ./coverage/lcov-report/index.html"
   },
