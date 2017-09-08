@@ -2,7 +2,12 @@
 const Navigation = require('react-navigation');
 jest.mock('../utils/transformer.utils.js');
 const tracker = {trackScreenView: jest.fn()};
-const screenTracking = require('../index')(tracker, 'nav', ['Navigation/BACK', 'Navigation/NAVIGATE']);
+const screenTrackingConfig = {
+  tracker,
+  navStoreKey: 'nav',
+  navActions: ['Navigation/BACK', 'Navigation/NAVIGATE']
+}
+const screenTracking = require('../index')(screenTrackingConfig);
 
 const createFakeStore = (fakeData) => ({
   getState () {
