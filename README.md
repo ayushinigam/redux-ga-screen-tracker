@@ -14,23 +14,30 @@ npm install redux-ga-screen-tracker --save
  * tracker: An instance of ```react-native-google-analytics-bridge```
  * nav: Key for store object with navigation stack
  * navActionsToTrack: Array of actions for screen tracking
- * gaRouteMap (optional) : config map of screen name to business name to be used in google analytics tracker
+ * gaRouteMap (optional) : Config map of screen name to business name to be used in google analytics tracker
+ * customDimensions (optional) : An object with custom dimensions
 <br>
 
 ```javascript
 //store.js
 import screenTracking from 'redux-ga-screen-tracker';
-import gaRouteMap from '../gaRouteMap.config';
+import screenTrackingConfig from '../screenTrackingConfig.config';
 import tracker from '../googleAnalytics.util'; //tracker from react-native-google-analytics-bridge
 
-const navActionsToTrack = ['Navigation/NAVIGATE', 'Navigation/BACK'];
-
-const middleware = compose(applyMiddleware(..., screenTracking(tracker, 'nav', navActionsToTrack, gaRouteMap)));
+const middleware = compose(applyMiddleware(..., screenTracking(screenTrackingConfig));
 
 const initStore = () => createStore(rootReducer, {}, middleware);
 ```
 ```javascript
-//gaRouteMap.config.js
+//screenTrackingConfig.config.js
+export const screenTrackingConfig = {
+  tracker,
+  navStoreKey: 'nav',
+  navActions: ['Navigation/NAVIGATE', 'Navigation/BACK', 'Navigation/RESET'],
+  gaRouteMap,
+  customDimensions
+};
+
 const gaRouteMap = {
   LaunchPage: 'Launch Screen',
   LoginPage: 'Login Screen'
