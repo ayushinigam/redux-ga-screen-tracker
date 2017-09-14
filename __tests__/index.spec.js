@@ -4,7 +4,7 @@ jest.mock('../utils/transformer.utils.js');
 const tracker = {trackScreenView: jest.fn()};
 const screenTrackingConfig = {
   tracker,
-  navStoreKey: 'nav',
+  navStoreKey: ['nav'],
   navActions: ['Navigation/BACK', 'Navigation/NAVIGATE']
 }
 const screenTracking = require('../index')(screenTrackingConfig);

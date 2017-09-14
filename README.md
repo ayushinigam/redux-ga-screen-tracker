@@ -12,7 +12,7 @@ npm install redux-ga-screen-tracker --save
 <br>redux-ga-screen-tracker expects the following parameters:
 
  * tracker: An instance of ```react-native-google-analytics-bridge```
- * nav: Key for store object with navigation stack
+ * nav: An array of string for path to navigation stack in store
  * navActionsToTrack: Array of actions for screen tracking
  * gaRouteMap (optional) : Config map of screen name to business name to be used in google analytics tracker
  * customDimensions (optional) : An object with custom dimensions
@@ -32,7 +32,7 @@ const initStore = () => createStore(rootReducer, {}, middleware);
 //screenTrackingConfig.config.js
 export const screenTrackingConfig = {
   tracker,
-  navStoreKey: 'nav',
+  navStoreKey: ['nav'],
   navActions: ['Navigation/NAVIGATE', 'Navigation/BACK', 'Navigation/RESET'],
   gaRouteMap,
   customDimensions
@@ -68,6 +68,12 @@ const nav = (state, action) => (
 );
 
 const appReducers = combineReducers({ ..., nav });
+```
+<strong>Other Usage</strong>:
+
+For drawer navigator present at the root level and for not tracking the drawer routes set:
+```
+navStoreKey: ['nav', 'routes', '0'] //It would not track DrawerOpen as it's present at level 1 and other routes are present at level 0
 ```
 
 <strong>References</strong>:
