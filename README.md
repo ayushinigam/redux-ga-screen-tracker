@@ -1,5 +1,7 @@
 # redux-ga-screen-tracker
 
+<i>Inspired by [react-navigation guide](https://github.com/react-community/react-navigation/blob/bbab489a6acfd9ef5185f2c0bcc9d1420a647d78/docs/guides/Screen-Tracking.md)</i>
+
 Redux middleware to track screens on google analytics in a react-native application using [react-navigation](https://github.com/react-community/react-navigation)<br>
 The middleware triggers track screen events on desired navigation actions with screen name which it gets from the route stack in the store.
 
