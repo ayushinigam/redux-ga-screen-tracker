@@ -9,7 +9,7 @@ module.exports = ({tracker, navStoreKey, navActions = [], gaRouteMap = {}, custo
       const result = next(action);
       const nextScreen = getCurrentRouteName(getState()[navStoreKey]);
       if (nextScreen !== currentScreen) {
-        const screenName = isEmpty(gaRouteMap) ? nextScreen : gaRouteMap[nextScreen];
+        const screenName = (isEmpty(gaRouteMap) || !gaRouteMap[nextScreen]) ? nextScreen : gaRouteMap[nextScreen];
         if (isEmpty(customDimensions)) {
           tracker.trackScreenView(screenName);
         } else {
