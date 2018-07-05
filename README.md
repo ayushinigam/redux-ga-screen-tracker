@@ -18,6 +18,7 @@ npm install redux-ga-screen-tracker --save
  * navActionsToTrack: Array of actions for screen tracking
  * gaRouteMap (optional) : Config map of screen name to business name to be used in google analytics tracker
  * customDimensions (optional) : An object with custom dimensions
+ * getCustomDimensions (optional) : Returns custom dimensions
 <br>
 
 ```javascript
